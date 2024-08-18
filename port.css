@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: beige;
+  }
+  
+  #picture {
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+  }
+
+  #picture p{
+    min-height: 600px;
+  }
+  
+  #picture img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+  }
+  #picture img:first-child{
+    z-index: 1;
+    box-shadow: 100%;
+    bottom: 0px;
+  }
+
+  #picture img:last-child{
+    z-index: 0;
+  }
+
+  #aboutMe {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #aboutMe p {
+    padding: 10px 0px 10px 0px;
+    max-width: 500px;
+  }
+  
+  #myProfile {
+    width: 50%;
+    margin: 0 auto;
+    line-height: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #grid {
+    background-color: rgb(253, 253, 159);
+  }
+  #myProfile img {
+    width: 100%;
+    max-height: 30vw;
+  }
+  
+  #myProfile article {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 0);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px 10px;
+    mix-blend-mode: lighten;
+  }
+  
+  #myProfile article > div {
+    background-color: black;
+  }
+
+  #myProfile article > div:nth-of-type(1) {
+    grid-column: 1 / 2;
+    grid-row: 2  / 4;
+  }
+  
+  #myProfile article > div:nth-of-type(2) {
+    grid-column: 2 / 3;
+  }
+  
+  #myProfile article > div:nth-of-type(3) {
+    grid-column: 3 / 4;
+  }
+
+  #myProfile article > div:nth-of-type(4) {
+    grid-column: 4 / 5;
+  }
+  #myProfile article > div:nth-of-type(5) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  #myExp {
+    background-color: orange;
+    justify-content: center;
+    display: flex;
+    font-size: 50px;
+  }
+
+  .scroller-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .tag-list {
+    margin: 0;
+    padding-inline: 0;
+    list-style: none;
+  }
+  .tag-list li {
+    padding: 1rem;
+    background: blue;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem -0.25rem blue;
+  }
+
+  .scroller {
+    max-width: 800px;
+    outline: 1px solid lime;
+    margin: auto;
+    overflow: hidden;
+    
+    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 80%, transparent);
+  }
+  .scroller_inner {
+    width: max-content ;
+    padding-block: 1rem;
+    display: flex;
+    gap: 1rem;
+    animation: scroll 10s linear infinite;
+  }
+  @keyframes scroll{
+    to {
+      transform: translate(calc(-50% - 0.25rem));
+    }
+  }
+
+  .swiper-container {
+
+    padding-top: 20px;
+    width: 50%;
+
+    transform-origin: top left;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project {
+    background-color:#5d9ec3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  .project.in{
+    animation: fade_in linear forwards;
+    animation-timeline: view();
+    animation-range-start:90px ;
+    animation-range-end: 200px;
+
+    
+  }
+@keyframes fade_in {
+  from {scale: .8; opacity: 0;}
+  to {scale: 1; opacity: 1;}
+}
+  .project.out {
+    opacity: 1;
+    animation: fade_out linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+ }
+@keyframes fade_out {
+  from {scale: 1; opacity: 1;}
+  to  {scale: .8; opacity: 0;}
+} 
+
+  .text{
+    padding-top: 20px;
+    color: wheat;
+    width: 30%;
+    padding-left: 50px;
+  }
+
+  .text h1 {
+    font-size: 35px;
+    padding-bottom: 20px;
+  }
+  .text h2 {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .text h3 {
+    font-size: 25px;
+    padding-bottom: 20px;
+  }
+
+  .text p{
+    font-size: 25px;
+    padding-bottom: 20px;
+  }
+  .text a{
+    background-color: white;
+    color:#5d9ec3;
+    text-decoration: none;
+    margin: 10px ;
+    padding: 5px 8px 5px 8px;
+    margin: 10px;
+  }
+
+  .footerContainer {
+    height: 100px;
+    background-color: brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .socialIcons a {
+    text-decoration: none;
+    margin: 10px ;
+    padding: 10px 13px 10px 13px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+  }
+
+
+
