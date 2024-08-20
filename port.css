@@ -12,26 +12,53 @@
   #picture {
     display: flex;
     align-items: center;
-    background-color: aquamarine;
+    
     justify-content: center;
+    background-color: aquamarine;
     flex-direction: column;
     height: 100vh;
     position: relative;
   }
 
-  #picture p{
+  /* #picture p{
     min-height: 600px;
+  } */
+  #picture section {
+    position: absolute;
+    top: 200px;
+    right: 300px;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
+  #picture section H1 {
+    
+  }
+#picture section H1,
+#picture section H2,
+#picture section H3,
+#picture section p {
+  text-align: center; /* Add this to center all the text elements */
+  padding-bottom: 10px;
+}
+#picture section div {
+  padding-top: 30px;
+}
+
   #picture img {
-    max-width: 100%;
+    
+    width: 500px;
     height: auto;
     position: absolute;
   }
   #picture img:first-child{
     z-index: 1;
     box-shadow: 100%;
-    bottom: 0px;
+    bottom: -10px;
+    left: 100px;
   }
 
   #picture img:last-child{
